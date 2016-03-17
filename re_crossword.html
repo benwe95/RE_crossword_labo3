@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="css_code.css"> -->
+    <title>Regular expressions crossword</title>
+    <style>
+      #principal
+      {
+        text-align: center;
+        margin: 150px auto;
+        font-family: Georgia;
+      }
+
+      table
+      {
+        margin:auto;
+        border-collapse: collapse;
+      }
+
+      .expression_column
+      {
+        max-width: 100px;
+        min-width: 100px;
+        height: 100px;
+        position: relative;
+        top: -50px;
+        white-space: nowrap;
+          -webkit-transform: rotate(+90.0deg);/*Saf, Chrome*/
+          -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)"; /*IE8*/
+      }
+
+      .expression_line
+      {
+        width: 200px;
+        white-space: nowrap;
+      }
+
+      tr
+      {
+        height: 100px;
+      }
+
+      .empty
+      {
+        max-width: 100px;
+        min-width: 100px;
+        border:1px solid black;
+      }
+
+      #answer
+      {
+        margin: 50px;
+        text-align: center;
+      }
+      </style>
+  </head>
+
+  <body>
+    <div id='principal'>
+      <table >
+
+        <tr>
+          <td class='first'></td>
+          <td class='expression_column'>(UN|DP|ST)+[LEM]</td>
+          <td class='expression_column'>[WEST]+[^LIB]</td>
+          <td class='expression_column'>[UBER]+</td>
+        </tr>
+        <tr>
+          <td class="expression_line">[DEBIAN](.)\1</td>
+          <td class='empty'></td>
+          <td class='empty'></td>
+          <td class='empty'></td>
+        </tr>
+        <tr>
+          <td class="expression_line">(.)[BIL\s]{2}</td>
+          <td class='empty'></td>
+          <td class='empty'></td>
+          <td class='empty'></td>
+        </tr>
+        <tr>
+          <td class="expression_line">(UL|LU|T)+[ECAM]</td>
+          <td class='empty'></td>
+          <td class='empty'></td>
+          <td class='empty'></td>
+        </tr>
+
+
+      </table>
+      <div id='answer'>
+        <form method='get' action='/answer'>
+          <input type='text' name='answer' placeholder="Answer" maxlength="9" >
+          <input type='submit' value='send' >
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
