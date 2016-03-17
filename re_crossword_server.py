@@ -19,4 +19,4 @@ def answer():
         return template('re_wrong.html')
 
 
-run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+run(host='localhost', port=int(os.environ.get('PORT', 5000)))

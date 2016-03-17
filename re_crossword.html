@@ -8,16 +8,14 @@
       #principal
       {
         text-align: center;
-        margin: 150px auto;
+        margin: 50px auto;
         font-family: Georgia;
       }
-
       table
       {
-        margin:auto;
+        margin:100px auto;
         border-collapse: collapse;
       }
-
       .expression_column
       {
         max-width: 100px;
@@ -29,41 +27,43 @@
           -webkit-transform: rotate(+90.0deg);/*Saf, Chrome*/
           -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)"; /*IE8*/
       }
-
       .expression_line
       {
         width: 200px;
         white-space: nowrap;
       }
-
       tr
       {
         height: 100px;
       }
-
       .empty
       {
         max-width: 100px;
         min-width: 100px;
         border:1px solid black;
       }
-
       #answer
       {
-        margin: 50px;
+        /*margin: 50px;*/
         text-align: center;
+      }
+      #intro
+      {
+        font-family: Georgia;
+        font-size: 42px;
       }
       </style>
   </head>
 
   <body>
     <div id='principal'>
+      <p id='intro'>Will you find the word?</p>
       <table >
 
         <tr>
           <td class='first'></td>
           <td class='expression_column'>(UN|DP|ST)+[LEM]</td>
-          <td class='expression_column'>[WEST]+[^LIB]</td>
+          <td class='expression_column'>[WEST]+[^LIB]+</td>
           <td class='expression_column'>[UBER]+</td>
         </tr>
         <tr>
@@ -87,12 +87,12 @@
 
 
       </table>
-      <div id='answer'>
-        <form method='get' action='/answer'>
-          <input type='text' name='answer' placeholder="Answer" maxlength="9" >
-          <input type='submit' value='send' >
-        </form>
-      </div>
+
+      <form id='answer' method='get' action='/answer'>
+        <input type='text' name='answer' placeholder="Answer" maxlength="9" >
+        <input type='submit' value='send' >
+      </form>
+
     </div>
   </body>
 </html>
